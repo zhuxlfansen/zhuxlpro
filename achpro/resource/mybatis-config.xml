@@ -28,19 +28,11 @@
 
 
 	<typeAliases>
-		<typeAlias alias="Article" type="com.yizu.main.dao.model.Article" />
-		<typeAlias alias="CompanyInfo" type="com.yizu.main.dao.model.CompanyInfo" />
-		<typeAlias alias="Guestbook" type="com.yizu.main.dao.model.Guestbook" />
-		<typeAlias alias="Recruit" type="com.yizu.main.dao.model.Recruit" />
-		<typeAlias alias="User" type="com.yizu.main.dao.model.User" />
+		<typeAlias alias="User" type="cn.achero.main.dao.mapper.UserMapper" />
 	</typeAliases>
 
 	<mappers>
-		<mapper resource="com/yizu/main/dao/mapper/ArticleMapper.xml" />
-		<mapper resource="com/yizu/main/dao/mapper/CompanyInfoMapper.xml" />
-		<mapper resource="com/yizu/main/dao/mapper/GuestbookMapper.xml" />
-		<mapper resource="com/yizu/main/dao/mapper/RecruitMapper.xml" />
-		<mapper resource="com/yizu/main/dao/mapper/UserMapper.xml" />
+		<mapper resource="cn/achero/main/dao/mapper/UserMapper.xml" />
 	</mappers>
 
 </configuration>
