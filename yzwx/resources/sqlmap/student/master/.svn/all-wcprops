@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/yzwx/!svn/ver/259/resources/sqlmap/student/master
+END
+MajorMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/yzwx/!svn/ver/209/resources/sqlmap/student/master/MajorMapper.xml
+END
+StudentMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/yzwx/!svn/ver/259/resources/sqlmap/student/master/StudentMapper.xml
+END
+RegionMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/yzwx/!svn/ver/180/resources/sqlmap/student/master/RegionMapper.xml
+END
+SchoolMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/yzwx/!svn/ver/106/resources/sqlmap/student/master/SchoolMapper.xml
+END

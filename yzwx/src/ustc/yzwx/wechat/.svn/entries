@@ -1,0 +1,40 @@
+9
+
+dir
+300
+http://nccun.oicp.net:8082/svn/yzwx/src/ustc/yzwx/wechat
+http://nccun.oicp.net:8082/svn/yzwx
+
+
+
+2014-03-04T09:22:13.167333Z
+293
+chenyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dd34117f-6113-2941-b383-7d8603026376
+
+bean
+dir
+
+filter
+dir
+
+oauth
+dir
+
+util
+dir
+

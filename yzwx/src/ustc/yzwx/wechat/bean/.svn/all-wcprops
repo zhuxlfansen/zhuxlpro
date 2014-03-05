@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/yzwx/!svn/ver/289/src/ustc/yzwx/wechat/bean
+END
+MusicOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/yzwx/!svn/ver/5/src/ustc/yzwx/wechat/bean/MusicOutMessage.java
+END
+Articles.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/yzwx/!svn/ver/289/src/ustc/yzwx/wechat/bean/Articles.java
+END
+NewsOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/5/src/ustc/yzwx/wechat/bean/NewsOutMessage.java
+END
+OutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/yzwx/!svn/ver/289/src/ustc/yzwx/wechat/bean/OutMessage.java
+END
+TextOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/yzwx/!svn/ver/289/src/ustc/yzwx/wechat/bean/TextOutMessage.java
+END
+InMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/289/src/ustc/yzwx/wechat/bean/InMessage.java
+END

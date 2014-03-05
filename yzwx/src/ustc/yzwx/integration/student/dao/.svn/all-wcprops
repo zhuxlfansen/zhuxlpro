@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/206/src/ustc/yzwx/integration/student/dao
+END
+RegionDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/yzwx/!svn/ver/180/src/ustc/yzwx/integration/student/dao/RegionDao.java
+END
+SchoolDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/yzwx/!svn/ver/107/src/ustc/yzwx/integration/student/dao/SchoolDao.java
+END
+MajorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/yzwx/!svn/ver/206/src/ustc/yzwx/integration/student/dao/MajorDao.java
+END
+StudentDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/yzwx/!svn/ver/206/src/ustc/yzwx/integration/student/dao/StudentDao.java
+END
