@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="weChatConfig" class="mvc.com.wechat.util.WeChatConfig" lazy-init="false" scope="singleton" init-method="setup">
+        <property name="propertyFiles">
+            <list>
+                <value>properties/wechat.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+    <!-- action -->
+	<context:component-scan base-package="mvc.com.main.action" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- accessの@RequestMapping的支持 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" >
+	</bean>
+
+	<!-- @ResponseBody、@RequestMapping的支持 -->
+  	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+<!-- 		<property name="customModelAndViewResolvers"> -->
+<!-- 			<list> -->
+<!-- 				<bean class="cn.jl.common.presentation.response.resolver.ResponseBodyErrorResolver" /> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+   		<property name="messageConverters">
+   			<list>
+				<!-- JavaScript生成 -->
+<!--  				<ref bean="javascript_hmc" /> -->
+				<!-- ZIP、CSV生成 -->
+<!-- 				<ref bean="stream_hmc" /> -->
+				<!-- Json支持 -->
+    			<ref bean="jackson_hmc" />
+    			<!-- Xml支持-->
+    			<ref bean="xml_hmc" /> 
+   			</list>
+   		</property>
+  	</bean>
+	<!-- JavaScript生成 -->
+	<!-- 	<bean id="javascript_hmc" class="cn.jl.common.presentation.response.converter.JavaScriptHttpMessageConverter" /> -->
+	<!-- ZIP、CSV生成 -->
+	<!-- 	<bean id="stream_hmc" class="cn.jl.common.presentation.response.converter.StreamHttpMessageConverter" /> -->
+	
+	<!-- Json支持 -->
+	<bean id="jackson_hmc" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+	
+	<!-- Xml支持 -->
+	<bean id="xml_hmc" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter" >
+		<property name="supportedMediaTypes" value="text/xml"/>
+		<constructor-arg ref="xmlMarshaller"  />
+	</bean>
+
+	<bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller" >
+		<property name="streamDriver" >
+			<bean class="com.thoughtworks.xstream.io.xml.StaxDriver" />
+		</property>
+		<property name="autodetectAnnotations" value="true"/>
+		<property name="annotatedClasses">
+			<list>
+				<value>mvc.com.wechat.bean.InMessage</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- view定义 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/page/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 静态文件 -->
+	<mvc:resources mapping="/static/**" location="/static/" cache-period="31556926" />
+
+	<!-- 全局异常设定 -->
+	<bean class="mvc.com.main.action.ioc.ActionExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error/system_error</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html;charset=UTF-8" />
+				<entry key="json" value="application/json;charset=UTF-8" />
+				<entry key="xml" value="application/xml;charset=UTF-8" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- download设定 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="2097152"/>
+		<property name="resolveLazily" value="true"/>
+	</bean>
+
+</beans>
