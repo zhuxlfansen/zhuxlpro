@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mvc.com.main.dao.MemberDao" >
+
+
+<select id="countByWxCode" resultType="Integer" parameterType="String">
+	select count(0) from sj_member where wx_code=#{wxCode}
+</select>
+
+<select id="selectIntegralByWxCode" resultType="java.util.HashMap" parameterType="String">
+	select integral,update_time updateTime from sj_member where wx_code=#{wxCode}
+</select>
+
+<update id="updateIntegral" parameterType="java.util.HashMap">
+	update sj_member set integral = #{integral},update_time =#{updateTime} where wx_code = #{wxCode}
+</update>
+
+<insert id="createMember" parameterType="java.util.HashMap">
+	insert into sj_member values(#{wxCode},#{integral},#{updateTime})
+</insert>
+</mapper>
