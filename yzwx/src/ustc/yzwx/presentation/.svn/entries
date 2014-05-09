@@ -1,55 +1,0 @@
-9
-
-dir
-300
-http://nccun.oicp.net:8082/svn/yzwx/src/ustc/yzwx/presentation
-http://nccun.oicp.net:8082/svn/yzwx
-
-
-
-2014-03-04T09:22:51.657534Z
-295
-chenyang
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-dd34117f-6113-2941-b383-7d8603026376
-
-activity
-dir
-
-admin
-dir
-
-common
-dir
-
-partakeRecord
-dir
-
-realm
-dir
-
-response
-dir
-
-sample
-dir
-
-student
-dir
-
-wechat
-dir
-
