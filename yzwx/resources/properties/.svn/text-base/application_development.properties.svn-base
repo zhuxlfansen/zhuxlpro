@@ -1,0 +1,28 @@
+###############################################################################
+# Development\u74b0\u5883\u8a2d\u5b9a
+###############################################################################
+# JDBC: Oracle 11g Database Settings
+jdbc.driver=com.mysql.jdbc.Driver
+#jdbc.url=jdbc:mysql://192.168.1.107:3306/wxyz
+#jdbc.username=root
+#jdbc.password=123
+#jdbc.url=jdbc:mysql://192.168.1.115:3306/yzwx?useUnicode=true&characterEncoding=UTF8
+#jdbc.username=root
+#jdbc.password=root
+
+jdbc.url=jdbc\:mysql\://rdsvyqrryvyqrry.mysql.rds.aliyuncs.com\:3306/dbobe6k3anuvrvhj?useUnicode\=true&characterEncoding\=UTF8
+jdbc.username=dbobe6k3anuvrvhj
+jdbc.password=1q2w3e4r
+
+jdbc.maxActive=2
+jdbc.maxIdle=1
+jdbc.minIdle=1
+jdbc.maxWait=500
+jdbc.testWhileIdle=true
+jdbc.timeBetweenEvictionRunsMillis=60000
+jdbc.validationQuery=select 1 from dual
+
+#shiro authentication and authorization configuration
+shiro.authenticationQuery=select USER_PWD from T_USER where USER_ID = ?
+shiro.userRolesQuery=select ROLE_ID from R_USER_ROLE where USER_ID = ?
+shiro.permissionsQuery=select PERMISSION_ID from R_ROLE_PERMISSION, R_USER_ROLE where USER_ID \= ? AND R_USER_ROLE.ROLE_ID \= R_ROLE_PERMISSION.ROLE_ID

@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/yzwx/!svn/ver/600/WebRoot/WEB-INF/lib
+END
+shiro-spring-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/shiro-spring-1.2.1.jar
+END
+spring-data-jpa-1.2.0.RC1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-data-jpa-1.2.0.RC1.jar
+END
+commons-io-2.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/commons-io-2.0.1.jar
+END
+spring-context-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-context-3.1.2.RELEASE.jar
+END
+spring-context-support-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-context-support-3.1.2.RELEASE.jar
+END
+commons-httpclient.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/yzwx/!svn/ver/505/WebRoot/WEB-INF/lib/commons-httpclient.jar
+END
+ant-1.8.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/ant-1.8.2.jar
+END
+commons-dbcp-1.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/commons-dbcp-1.4.jar
+END
+validation-api-1.0.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/validation-api-1.0.0.GA.jar
+END
+commons-collections-3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/yzwx/!svn/ver/505/WebRoot/WEB-INF/lib/commons-collections-3.2.jar
+END
+jackson-mapper-asl-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar
+END
+mysql-connector-java-5.0.8-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/yzwx/!svn/ver/6/WebRoot/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar
+END
+ehcache-core-2.6.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/ehcache-core-2.6.0.jar
+END
+commons-beanutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/yzwx/!svn/ver/505/WebRoot/WEB-INF/lib/commons-beanutils.jar
+END
+aopalliance-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/aopalliance-1.0.jar
+END
+slf4j-api-1.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/slf4j-api-1.7.1.jar
+END
+ezmorph-1.0.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/505/WebRoot/WEB-INF/lib/ezmorph-1.0.5.jar
+END
+slf4j-log4j12-1.7.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/slf4j-log4j12-1.7.1.jar
+END
+spring-jdbc-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-jdbc-3.1.2.RELEASE.jar
+END
+spring-asm-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-asm-3.1.2.RELEASE.jar
+END
+sitemesh-2.4.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/sitemesh-2.4.2.jar
+END
+shiro-web-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/shiro-web-1.2.1.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar
+END
+org.springframework.oxm-3.0.5.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/yzwx/!svn/ver/5/WebRoot/WEB-INF/lib/org.springframework.oxm-3.0.5.RELEASE.jar
+END
+shiro-core-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/shiro-core-1.2.1.jar
+END
+standard-1.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/standard-1.1.2.jar
+END
+spring-aop-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-aop-3.1.2.RELEASE.jar
+END
+xstream-1.4.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/xstream-1.4.5.jar
+END
+public.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/yzwx/!svn/ver/63/WebRoot/WEB-INF/lib/public.jar
+END
+spring-tx-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-tx-3.1.2.RELEASE.jar
+END
+spring-webmvc-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-webmvc-3.1.2.RELEASE.jar
+END
+commons-fileupload-1.2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/commons-fileupload-1.2.2.jar
+END
+ace4j-openapi-mock-0.0.1-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/yzwx/!svn/ver/511/WebRoot/WEB-INF/lib/ace4j-openapi-mock-0.0.1-SNAPSHOT.jar
+END
+cglib-nodep-2.2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/cglib-nodep-2.2.3.jar
+END
+spring-beans-3.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-beans-3.1.2.jar
+END
+mybatis-spring-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/mybatis-spring-1.1.1.jar
+END
+log4j-1.2.17.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/log4j-1.2.17.jar
+END
+morph-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/505/WebRoot/WEB-INF/lib/morph-1.1.1.jar
+END
+commons-lang.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/505/WebRoot/WEB-INF/lib/commons-lang.jar
+END
+spring-jms-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-jms-3.1.2.RELEASE.jar
+END
+jstl-api-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/jstl-api-1.2.jar
+END
+protobuf-2.5.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/protobuf-2.5.0.jar
+END
+jackson-core-asl-1.9.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/jackson-core-asl-1.9.2.jar
+END
+aclibico-2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/aclibico-2.1.jar
+END
+spring-web-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-web-3.1.2.RELEASE.jar
+END
+spring-security-core-3.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/yzwx/!svn/ver/169/WebRoot/WEB-INF/lib/spring-security-core-3.1.3.jar
+END
+spring-expression-3.1.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-expression-3.1.2.RELEASE.jar
+END
+mybatis-3.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/mybatis-3.1.1.jar
+END
+spring-test-3.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-test-3.1.2.jar
+END
+poi-3.6-20091214.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/600/WebRoot/WEB-INF/lib/poi-3.6-20091214.jar
+END
+spring-data-commons-core-1.4.0.RC1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-data-commons-core-1.4.0.RC1.jar
+END
+xpp3_min-1.1.4c.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/xpp3_min-1.1.4c.jar
+END
+commons-lang3-3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/commons-lang3-3.1.jar
+END
+quartz-1.5.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/551/WebRoot/WEB-INF/lib/quartz-1.5.2.jar
+END
+xmlpull-1.1.3.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/xmlpull-1.1.3.1.jar
+END
+sqljdbc4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/sqljdbc4.jar
+END
+spring-core-3.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/spring-core-3.1.2.jar
+END
+ace4j-openapi-0.0.1-SNAPSHOT.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/yzwx/!svn/ver/511/WebRoot/WEB-INF/lib/ace4j-openapi-0.0.1-SNAPSHOT.jar
+END
+shiro-ehcache-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/shiro-ehcache-1.2.1.jar
+END
+json-lib-2.1-jdk15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/json-lib-2.1-jdk15.jar
+END
+commons-pool-1.5.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/yzwx/!svn/ver/2/WebRoot/WEB-INF/lib/commons-pool-1.5.4.jar
+END

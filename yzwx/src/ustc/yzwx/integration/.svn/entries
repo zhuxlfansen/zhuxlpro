@@ -1,0 +1,40 @@
+9
+
+dir
+698
+http://nccun.oicp.net:8082/svn/yzwx/src/ustc/yzwx/integration
+http://nccun.oicp.net:8082/svn/yzwx
+
+
+
+2014-05-07T10:45:22.681974Z
+683
+chenyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dd34117f-6113-2941-b383-7d8603026376
+
+activity
+dir
+
+admin
+dir
+
+partakeRecord
+dir
+
+student
+dir
+

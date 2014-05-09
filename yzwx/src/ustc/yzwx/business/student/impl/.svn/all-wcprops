@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/683/src/ustc/yzwx/business/student/impl
+END
+MajorServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/yzwx/!svn/ver/683/src/ustc/yzwx/business/student/impl/MajorServiceImpl.java
+END
+SubscribeServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/yzwx/!svn/ver/431/src/ustc/yzwx/business/student/impl/SubscribeServiceImpl.java
+END
+StudentServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/yzwx/!svn/ver/683/src/ustc/yzwx/business/student/impl/StudentServiceImpl.java
+END
+StudentMajorServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/yzwx/!svn/ver/613/src/ustc/yzwx/business/student/impl/StudentMajorServiceImpl.java
+END
+SchoolServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yzwx/!svn/ver/659/src/ustc/yzwx/business/student/impl/SchoolServiceImpl.java
+END
+RegionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/yzwx/!svn/ver/645/src/ustc/yzwx/business/student/impl/RegionServiceImpl.java
+END

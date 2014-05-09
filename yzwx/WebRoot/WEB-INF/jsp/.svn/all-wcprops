@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/yzwx/!svn/ver/698/WebRoot/WEB-INF/jsp
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/yzwx/!svn/ver/303/WebRoot/WEB-INF/jsp/login.jsp
+END
+partakeRecordDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/701/WebRoot/WEB-INF/jsp/partakeRecordDetail.jsp
+END
+studentDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/679/WebRoot/WEB-INF/jsp/studentDetail.jsp
+END
+adminList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/yzwx/!svn/ver/453/WebRoot/WEB-INF/jsp/adminList.jsp
+END
+header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/yzwx/!svn/ver/676/WebRoot/WEB-INF/jsp/header.jsp
+END
+activityList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/685/WebRoot/WEB-INF/jsp/activityList.jsp
+END
+studentQuery.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/697/WebRoot/WEB-INF/jsp/studentQuery.jsp
+END
+studentLogin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/689/WebRoot/WEB-INF/jsp/studentLogin.jsp
+END
+info.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/yzwx/!svn/ver/538/WebRoot/WEB-INF/jsp/info.jsp
+END
+addActivity.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/677/WebRoot/WEB-INF/jsp/addActivity.jsp
+END
+queryMajor.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/yzwx/!svn/ver/697/WebRoot/WEB-INF/jsp/queryMajor.jsp
+END
+adminAdd.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/yzwx/!svn/ver/453/WebRoot/WEB-INF/jsp/adminAdd.jsp
+END
+navigation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/yzwx/!svn/ver/678/WebRoot/WEB-INF/jsp/navigation.jsp
+END
+studentLoginSuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/571/WebRoot/WEB-INF/jsp/studentLoginSuccess.jsp
+END
+adminUpdate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/326/WebRoot/WEB-INF/jsp/adminUpdate.jsp
+END
+updateActivity.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yzwx/!svn/ver/612/WebRoot/WEB-INF/jsp/updateActivity.jsp
+END
+studentList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/yzwx/!svn/ver/634/WebRoot/WEB-INF/jsp/studentList.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/yzwx/!svn/ver/676/WebRoot/WEB-INF/jsp/footer.jsp
+END
+adminInfo.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/yzwx/!svn/ver/326/WebRoot/WEB-INF/jsp/adminInfo.jsp
+END
+activityInfo.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/571/WebRoot/WEB-INF/jsp/activityInfo.jsp
+END
+downXls.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/yzwx/!svn/ver/600/WebRoot/WEB-INF/jsp/downXls.jsp
+END
+studentListForActivity.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/yzwx/!svn/ver/686/WebRoot/WEB-INF/jsp/studentListForActivity.jsp
+END
+activityDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yzwx/!svn/ver/701/WebRoot/WEB-INF/jsp/activityDetail.jsp
+END
+getQRCode.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/yzwx/!svn/ver/561/WebRoot/WEB-INF/jsp/getQRCode.jsp
+END
+queryList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/yzwx/!svn/ver/697/WebRoot/WEB-INF/jsp/queryList.jsp
+END

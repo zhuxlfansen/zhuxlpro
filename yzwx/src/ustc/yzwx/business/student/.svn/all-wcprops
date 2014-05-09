@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/yzwx/!svn/ver/683/src/ustc/yzwx/business/student
+END
+MajorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/yzwx/!svn/ver/683/src/ustc/yzwx/business/student/MajorService.java
+END
+SubscribeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/yzwx/!svn/ver/431/src/ustc/yzwx/business/student/SubscribeService.java
+END
+StudentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/yzwx/!svn/ver/683/src/ustc/yzwx/business/student/StudentService.java
+END
+StudentMajorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/yzwx/!svn/ver/613/src/ustc/yzwx/business/student/StudentMajorService.java
+END
+RegionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/yzwx/!svn/ver/643/src/ustc/yzwx/business/student/RegionService.java
+END
+SchoolService.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/yzwx/!svn/ver/658/src/ustc/yzwx/business/student/SchoolService.java
+END

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ustc.yzwx.integration.partakeRecord.dao.PRChartDao" >
+
+	<!-- 根据活动类型查询年份list -->
+	<select id="getYearListForReport" resultType="Integer">
+	select distinct year(start_time) as year from wx_activity where type="report" order by year desc
+	</select>
+	
+	<!-- 根据年份查找报告会列表 -->
+	<select id="getReportListByYear" resultType="java.util.HashMap" parameterType="Integer">
+	select name,id from wx_activity where year(start_time)=#{year} and type="report"
+	</select>
+	
+	<!-- 活动详情 -->
+	<select id="getReportInfoById" resultType="java.util.HashMap" parameterType="Integer">
+	select name,content,start_time startTime,end_time endTime,address,lng,lat
+	from wx_activity where id=#{id}
+	</select>
+	
+	<!-- 活动参与情况统计：专业统计 -->
+  	<sql id="baseSQLforStudentMajor">
+  	select p.activity_id as activityId,ac.start_time as startTime,
+  		st.name as stName,m.code as majorCode,m.name as majorName,p.status as status
+  	from wx_student_major sm 
+  	left join wx_student st  on st.id=sm.student_id 
+  	left join wx_major m on sm.major_code=m.code 
+  	left join wx_partake_record p on p.student_id=st.id
+  	left join wx_activity ac on ac.id=p.activity_id
+	  </sql>
+ 	<select id="chartForStudentMajor" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+ 	select px.majorName as name,count(px.majorName) as value
+ 	 from (<include refid="baseSQLforStudentMajor"/>) px 
+		  where year(startTime)=#{year}
+		  <if test="activityId!='' and activityId!=null and activityId!='-1'">
+		  	and px.activityId = #{activityId}
+		  </if>
+		  <if test="type=='signed'">
+		  	and px.status!=1
+		  </if>
+  	group by px.majorCode order by value desc
+  	</select>
+  	<select id="countForStudentMajor" resultType="Integer" parameterType="java.util.HashMap">
+  	select count(0) c from wx_partake_record p left join wx_activity ac on p.activity_id=ac.id
+  		where year(ac.start_time)=#{year}
+	  <if test="activityId!='' and activityId!=null and activityId!='-1'">
+	  	and p.activity_id = #{activityId}
+	  </if>
+	  <if test="type=='signed'">
+	  	and p.status!=1
+	  </if>
+  	</select>
+  	
+  	
+  <!-- 活动参与情况统计：学校统计 -->
+  <sql id="baseSQLforStudentSchool">
+  select p.activity_id as activityId,ac.start_time as startTime,sh.name as schoolName,sh.id as schoolId,p.status as status
+  from wx_partake_record p left join wx_student st  on p.student_id=st.id 
+  	left join wx_school sh on st.school_id=sh.id
+  	left join wx_activity ac on p.activity_id=ac.id 
+  </sql>
+  <select id="chartForStudentSchool" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select px.schoolName as name,count(px.schoolName) as value
+  from (<include refid="baseSQLforStudentSchool"/>) px 
+	  where year(startTime)=#{year}
+	  <if test="activityId!='' and activityId!=null and activityId!='-1'">
+	  	and px.activityId = #{activityId}
+	  </if>
+	  <if test="type=='signed'">
+		and px.status!=1
+	  </if>
+  group by px.schoolId order by value desc
+  </select>
+  
+  <!-- 活动参与情况统计：地域统计 -->
+  <sql id="baseSQLforSchoolArea">
+  select p.activity_id as activityId,ac.start_time as startTime,rg.name as regionName,sh.name as schoolName,
+  		rg.code as regionCode,p.status as status
+  from wx_partake_record p left join wx_student st  on p.student_id=st.id
+	left join wx_school sh on sh.id=st.school_id
+	left join wx_region rg on sh.province=rg.code
+	left join wx_activity ac on p.activity_id=ac.id 
+  </sql>
+  <select id="chartForSchoolArea" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select px.regionName as name,count(px.regionName) as value
+  from (<include refid="baseSQLforSchoolArea"/>) px 
+	  where year(startTime)=#{year}
+	  <if test="activityId!='' and activityId!=null and activityId!='-1'">
+	  	and px.activityId = #{activityId}
+	  </if>
+	  <if test="type=='signed'">
+		and px.status!=1
+	  </if>
+  group by px.regionCode order by value desc
+  </select>
+  
+  <!-- 活动参与情况统计：根据加权平均成绩统计 -->
+  <sql id="baseSQLforStudentGPA">
+  select p.activity_id as activityId,st.gpa as gpa,ac.start_time as startTime,p.status as status
+  from wx_partake_record p left join wx_student st  on p.student_id=st.id
+  	left join wx_activity ac on p.activity_id=ac.id 
+  </sql>
+  <select id="chartForStudentGPA" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  	select '平均成绩：0-60分' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=0 and px.gpa<60 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+	union
+	select '平均成绩：60-75分' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=60 and px.gpa<75 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+  	select '平均成绩：75-85分' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=75 and px.gpa<85 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+  	select '平均成绩：85-90分' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=85 and px.gpa<90 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+  	select '平均成绩：90-95分' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=90 and px.gpa<95 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+  	select '平均成绩：95-100分' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=95 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+  	select '其他：无记录' as name,count(*) as value from (<include refid="baseSQLforStudentGPA"/>) px where isnull(px.gpa)
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  </select>
+  
+  <!-- 活动参与情况统计：根据班级排名统计 -->
+  <sql id="baseSQLforStudentRank">
+  select p.activity_id as activityId,ac.start_time as startTime,p.status as status,(st.student_rank/st.class_size)*100 as rank
+  from wx_partake_record p left join wx_student st  on p.student_id=st.id
+  	left join wx_activity ac on p.activity_id=ac.id 
+  </sql>
+  <select id="chartForStudentRank" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  	select '排名5%以上' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=0 and px.rank<5 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+	union
+	select '排名5%-10%' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=5 and px.rank<10 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+	select '排名10%-20%' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=10 and px.rank<20 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+	select '排名20%-30%' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=20 and px.rank<30 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+	select '排名30%-50%' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=30 and px.rank<50 ]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+	select '排名50%以下' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=50]]>
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  	union
+  	select '其他：无记录' as name,count(*) as value from (<include refid="baseSQLforStudentRank"/>) px where isnull(px.rank)
+  		and year(startTime)=#{year}
+  		<if test="activityId!='' and activityId!=null and activityId!='-1'">and px.activityId = #{activityId}</if>
+  		<if test="type=='signed'">and px.status!=1</if>
+  </select>
+  
+  <!-- 满意度统计 -->
+  <select id="chartForSatisZZ" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select sum(p.satis_zz)/count(p.satis_zz) as value,ac.name as name from wx_partake_record p
+	left join wx_activity ac on p.activity_id=ac.id
+	where <![CDATA[ac.end_time<=#{nowTime}]]> and year(ac.start_time)=#{year} and p.status=3
+	group by p.activity_id
+  </select>
+  <select id="chartForSatisNR" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select sum(p.satis_nr)/count(p.satis_nr) as value,ac.name as name from wx_partake_record p
+	left join wx_activity ac on p.activity_id=ac.id
+	where <![CDATA[ac.end_time<=#{nowTime}]]> and year(ac.start_time)=#{year} and p.status=3
+	group by p.activity_id
+  </select>
+  <select id="chartForSatisJD" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select sum(p.satis_jd)/count(p.satis_jd) as value,ac.name as name from wx_partake_record p
+	left join wx_activity ac on p.activity_id=ac.id
+	where <![CDATA[ac.end_time<=#{nowTime}]]> and year(ac.start_time)=#{year} and p.status=3
+	group by p.activity_id
+  </select>
+  <select id="countForSatis" resultType="Integer" parameterType="java.util.HashMap">
+  select count(p.student_id)  from wx_partake_record p
+	left join wx_activity ac on p.activity_id=ac.id
+	where <![CDATA[ac.end_time<=#{nowTime}]]> and year(ac.start_time)=#{year} and p.status=3
+  </select>
+  
+  
+  <!-- 根据活动ID查找该活动的意见列表 -->
+  <select id="querySuggestionListByActivityId" resultType="java.util.HashMap" parameterType="Integer">
+  select p.suggestion as suggestion,st.name as studentName,sc.name as schoolName,st.student_major as majorName
+	from wx_partake_record p 
+  	left join wx_student st on p.student_id=st.id
+	left join wx_school sc on st.school_id=sc.id
+  	left join wx_activity ac on p.activity_id=ac.id
+  	where ac.id=#{activityId} and p.status=3
+  </select>
+  <select id="countSatisForReport" resultType="java.util.HashMap" parameterType="Integer">
+  select sum(satis_zz)/count(satis_zz) as satisZZ,sum(satis_nr)/count(satis_nr) as satisNR,sum(satis_jd)/count(satis_jd) as satisJD,count(0) as sum
+  	from wx_partake_record where activity_id=#{activityId}
+  </select>
+  
+
+</mapper>

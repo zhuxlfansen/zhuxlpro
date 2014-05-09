@@ -1,0 +1,27 @@
+ACCESSTOKEN_URL = https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential
+PAYFEEDBACK_URL = https://api.weixin.qq.com/payfeedback/update
+
+wechat_creatMenu_url=https://api.weixin.qq.com/cgi-bin/menu/create?access_token=
+wechat_getMenu_url=https://api.weixin.qq.com/cgi-bin/menu/get?access_token=
+wechat_deleteMenu_url=https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=
+whchat_userInfo_url=https://api.weixin.qq.com/cgi-bin/user/info?access_token=
+wechat_qrcode_url=https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=
+wechat_showqurcode_rul=https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=
+
+# token\u5B9A\u4E49
+token = yizukeji
+# \u5fae\u4fe1AppId\uff0cAppSecret
+AppId       = wx49e5dfe9fa7e3f9c
+AppSecret   = 11ce992f292c8e427598fdda88dc63a9
+# \u652f\u4ed8\u8bf7\u6c42\u4e2d\u7528\u4e8e\u52a0\u5bc6\u7684\u5bc6\u94a5 paySignKey
+paySignKey  = 
+# \u5546\u6237id
+partnerId   = 
+# \u521d\u59cb\u5bc6\u94a5
+partnerKey  = 
+# \u652f\u4ed8\u8fd4\u56deurl
+notify_url  = 
+# oauth\u8df3\u8f6c
+redirect_uri =
+# \u670D\u52A1\u5668\u5730\u5740
+site_url=54.186.246.81/yzwx

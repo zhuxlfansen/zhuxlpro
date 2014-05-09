@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/yzwx/!svn/ver/695/src/ustc/yzwx/wechat/util
+END
+WeChatSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/yzwx/!svn/ver/695/src/ustc/yzwx/wechat/util/WeChatSession.java
+END
+HttpKit.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/yzwx/!svn/ver/293/src/ustc/yzwx/wechat/util/HttpKit.java
+END
+EncryptUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/450/src/ustc/yzwx/wechat/util/EncryptUtils.java
+END
+Tools.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/yzwx/!svn/ver/293/src/ustc/yzwx/wechat/util/Tools.java
+END
+WeChatConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/293/src/ustc/yzwx/wechat/util/WeChatConfig.java
+END
+WeChat.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/yzwx/!svn/ver/293/src/ustc/yzwx/wechat/util/WeChat.java
+END
+AdvancedUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/yzwx/!svn/ver/650/src/ustc/yzwx/wechat/util/AdvancedUtil.java
+END
+WeChatCommonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/yzwx/!svn/ver/666/src/ustc/yzwx/wechat/util/WeChatCommonUtil.java
+END
+XStreamFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/yzwx/!svn/ver/293/src/ustc/yzwx/wechat/util/XStreamFactory.java
+END

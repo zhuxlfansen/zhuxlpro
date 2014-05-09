@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ustc.yzwx.integration.partakeRecord.dao.PartakeRecordDao" >
+  <!-- resultMap -->
+  <!-- 考生参与活动记录map -->
+  <resultMap id="PartakeRecordtMap" type="ustc.yzwx.presentation.partakeRecord.form.PartakeRecord" >
+    <result column="satis_zz" property="satisZZ" jdbcType="FLOAT" />
+    <result column="satis_nr" property="satisNR" jdbcType="FLOAT" />
+    <result column="satis_jd" property="satisJD" jdbcType="FLOAT" />
+    <result column="suggestion" property="suggestion" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="SMALLINT" />
+    
+    <association property="student" column="student_id"  select="queryStudent" ></association>  
+    <association property="activity" column="activity_id"  select="queryActivity" ></association>  
+  </resultMap>
+  
+  <!-- 学生 -->
+  <resultMap id="StudentResult" type="ustc.yzwx.presentation.student.form.Student">
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <association property="school" column="school_id"  select="querySchool" ></association>  
+    <association property="major" column="major_code"  select="queryMajor" ></association>  
+  </resultMap>
+  
+  <select id="queryStudent" resultMap="StudentResult" >  
+    select id ,name ,school_id ,major_code from wx_student where id =#{id}  
+  </select>
+  
+  <!-- 学校 -->
+  <resultMap id="SchoolResult" type="ustc.yzwx.presentation.student.form.School">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="CHAR" />
+  </resultMap>
+  
+  <select id="querySchool" resultMap="SchoolResult" >  
+    select id ,name ,type from wx_school where id =#{id}  
+  </select> 
+  
+  <!-- 专业 --> 
+  <resultMap id="MajorResult" type="ustc.yzwx.presentation.student.form.Major" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="parent_code" property="parentCode" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="queryMajor" resultMap="MajorResult" >  
+    select id ,code ,parent_code ,name ,type from wx_major where code =#{code}  
+  </select> 
+  
+  
+  <!-- 活动 --> 
+  <resultMap id="ActivityResult" type="ustc.yzwx.presentation.activity.form.Activity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <select id="queryActivity" resultMap="ActivityResult" >  
+  select id ,name,start_time,end_time from wx_activity where id =#{id}  
+  </select>
+  
+  <select id="queryActivityList" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select ac.id as id,ac.name as name,ac.start_time as startTime,ac.end_time as endTime from wx_activity as ac
+  where ac.end_time<![CDATA[ <=#{nowTime}]]>
+	  <if test="startTime!=null">
+		and ac.start_time>= #{startTime}    
+	  </if>
+	  <if test="endTime!=null">
+	  <![CDATA[  
+	  	and ac.start_time<=#{endTime}
+	  ]]>
+	  </if>
+  </select> 
+  
+  <!-- 考生column集合 -->
+  <sql id="Base_Column_List" >
+    student_id, activity_id, satis_zz,satis_nr,satis_jd, suggestion, status
+  </sql>
+  
+  <!-- sql分割线   -->
+  <!-- 活动参与情况统计：专业统计 -->
+  <sql id="baseSQLforStudentMajor">
+  select m.code as majorCode,m.name as majorName,(select count(0) from wx_student) stuCount
+  from wx_student_major sm 
+  left join wx_student st on st.id=sm.student_id 
+  left join wx_major m on sm.major_code=m.code
+  </sql>
+  <select id="chartForStudentMajor" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select px.majorName as name,count(px.majorName) as value,px.stuCount as stuCount
+  from (<include refid="baseSQLforStudentMajor"/>) px 
+  group by px.majorCode order by value desc
+  </select>
+  
+  <!-- 活动参与情况统计：学校统计 -->
+  <sql id="baseSQLforStudentSchool">
+  select sh.name as schoolName,sh.id as schoolId
+  from wx_student st  left join wx_school sh on st.school_id=sh.id
+  	group by st.id
+  </sql>
+  <select id="chartForStudentSchool" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select px.schoolName as name,count(px.schoolName) as value,(select count(0) from wx_student) stuCount
+  from (<include refid="baseSQLforStudentSchool"/>) px 
+  group by px.schoolId order by value desc
+  </select>
+  
+  <!-- 活动参与情况统计：地域统计 -->
+  <sql id="baseSQLforSchoolArea">
+  select rg.name as regionName,sh.name as schoolName,rg.code as regionCode
+  from wx_student st  left join wx_school sh on sh.id=st.school_id
+	left join wx_region rg on sh.province=rg.code
+	  group by st.id
+  </sql>
+  <select id="chartForSchoolArea" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select px.regionName as name,count(px.regionName) as value,(select count(0) from wx_student) stuCount
+  from (<include refid="baseSQLforSchoolArea"/>) px 
+  group by px.regionCode order by value desc
+  </select>
+  
+  <!-- 活动参与情况统计：根据加权平均成绩统计 -->
+  <sql id="baseSQLforStudentGPA">
+  select st.gpa as gpa
+  from wx_student st  group by st.id
+  </sql>
+  <select id="chartForStudentGPA" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  	select '平均成绩：0-60分' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=0 and px.gpa<60 ]]>
+	union
+	select '平均成绩：60-75分' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=60 and px.gpa<75 ]]>
+  	union
+  	select '平均成绩：75-85分' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=75 and px.gpa<85 ]]>
+  	union
+  	select '平均成绩：85-90分' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=85 and px.gpa<90 ]]>
+  	union
+  	select '平均成绩：90-95分' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=90 and px.gpa<95 ]]>
+  	union
+  	select '平均成绩：95-100分' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where <![CDATA[ px.gpa>=95 ]]>
+  	union
+  	select '其他：无记录' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentGPA"/>) px where isnull(px.gpa)
+  </select>
+  
+  <!-- 活动参与情况统计：根据班级排名统计 -->
+  <sql id="baseSQLforStudentRank">
+  select (st.student_rank/st.class_size)*100 as rank
+  from wx_student st  group by st.id
+  </sql>
+  <select id="chartForStudentRank" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  	select '排名5%以上' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=0 and px.rank<5 ]]>
+	union
+	select '排名5%-10%' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=5 and px.rank<10 ]]>
+  	union
+	select '排名10%-20%' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=10 and px.rank<20 ]]>
+  	union
+	select '排名20%-30%' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=20 and px.rank<30 ]]>
+  	union
+	select '排名30%-50%' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=30 and px.rank<50 ]]>
+  	union
+	select '排名50%以下' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where <![CDATA[ px.rank>=50]]>
+  	union
+  	select '其他：无记录' as name,count(*) as value,(select count(0) from wx_student) stuCount from (<include refid="baseSQLforStudentRank"/>) px where isnull(px.rank)
+  </select>
+  
+  <!-- 满意度统计 -->
+  <select id="chartForSatisfaction" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select sum(p.satisfaction)/count(p.satisfaction) as satisfaction,ac.name as name,count(p.student_id) as student from wx_partake_record p
+	left join wx_activity ac on p.activity_id=ac.id
+	where <![CDATA[ac.end_time<=#{nowTime}]]> and p.status=3
+	  <if test="startTime!=null">
+		and ac.start_time>= #{startTime}    
+	  </if>
+	  <if test="endTime!=null">
+	  <![CDATA[  
+	  	and ac.start_time<=#{endTime}
+	  ]]>
+	  </if>
+	group by p.activity_id
+  </select>
+  
+  <!-- 根据活动名称查找该活动的意见列表 -->
+  <select id="querySuggestionListByActivityName" resultType="java.util.HashMap" parameterType="String">
+  select p.satisfaction as satisfaction,p.suggestion as suggestion,st.name as studentName,sc.name as schoolName,st.student_major as majorName
+	from wx_partake_record p 
+  	left join wx_student st on p.student_id=st.id
+	left join wx_school sc on st.school_id=sc.id
+  	left join wx_activity ac on p.activity_id=ac.id
+  	where ac.name=#{activityName} and p.status=3
+  </select>
+  
+  <!-- 按考生ID查询 -->
+  <select id="selectByStudentId" parameterType="java.lang.Integer" resultMap="PartakeRecordtMap">
+    select  student_id, activity_id, satis_zz,satis_nr,satis_jd, suggestion, status from wx_partake_record 
+    where student_id=#{studentId}
+  </select>
+  
+  <!-- 根据活动id和状态查询数目 -->
+  <select id="getStuCountByActivityAndStatus" resultType="Integer">
+     select count(*) from wx_partake_record where activity_id = #{activityId}
+     <if test="status!=0 and status !=null">
+      and status != #{status}
+      </if>
+  </select>
+  
+  <!-- 根据微信号查找参加过的活动列表 -->
+  <select id="queryPartakeRecordsByWxCode" resultType="java.util.HashMap" parameterType="String">
+  select ac.id as activityId,ac.code as activityCode,ac.name as activityName,st.wx_code as wxCode,
+  	p.satis_zz as satisZZ,p.satis_nr as satisNR,p.satis_jd as satisJD,
+  	p.suggestion as suggestion,p.status as status,r.name as regionName,ac.type as type,p.audit_status auditStatus
+ 	from wx_partake_record p left join wx_student st on p.student_id = st.id
+ 		left join wx_activity ac on p.activity_id = ac.id
+ 		left join wx_region r on ac.region_code=r.id
+ 	where st.wx_code=#{wxCode} order by p.status asc limit 0,9
+  </select>
+  
+  <select id="queryPartakeRecordByKey" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+  select ac.name as activityName,ac.content as activityContent,ac.address as activityAddress,ac.code as activityCode,
+  	ac.start_time as startTime,ac.end_time as endTime,ac.lng as lng,ac.lat as lat,
+  	p.satis_zz as satisZZ,p.satis_nr as satisNR,p.satis_jd as satisJD,ma.name acMajorName,
+  	p.suggestion as suggestion,p.status as partakeStatus,p.boarding_id as boardingId,ac.type type,p.audit_status auditStatus
+  	from wx_partake_record p left join wx_student st on p.student_id=st.id
+  		left join wx_activity ac on p.activity_id=ac.id
+  		left join wx_major ma on ma.code=ac.major_code
+  	where st.wx_code=#{wxCode} and p.activity_id=#{activityId}
+  </select>
+  
+  <insert id="insertSelective" parameterType="ustc.yzwx.presentation.partakeRecord.form.PartakeRecord" >
+    insert into wx_partake_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="student != null" >
+        student_id,
+      </if>
+      <if test="activity != null" >
+        activity_id,
+      </if>
+      <if test="satisZZ != null" >
+        satis_zz,
+      </if>
+      <if test="satisNR != null" >
+        satis_nr,
+      </if>
+      <if test="satisJD != null" >
+        satis_jd,
+      </if>
+      <if test="suggestion != null" >
+        suggestion,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="student != null" >
+        #{student.id ,jdbcType=INTEGER},
+      </if>
+      <if test="activity != null" >
+        #{activity.id,jdbcType=INTEGER},
+      </if>
+      <if test="satisZZ != null" >
+        #{satisZZ,jdbcType=INTEGER},
+      </if>
+      <if test="satisNR != null" >
+        #{satisNR,jdbcType=INTEGER},
+      </if>
+      <if test="satisJD != null" >
+        #{satisJD,jdbcType=INTEGER},
+      </if>
+      <if test="suggestion != null" >
+        #{suggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  
+    <!-- 按考生ID查询 -->
+  <select id="findByStuIdAndActId" resultType="Integer">
+    select count(*) from wx_partake_record 
+    where student_id=#{stuId} and activity_id =#{actId}
+  </select>
+  <update id="updateSelective"  parameterType="java.util.HashMap">
+  update wx_partake_record
+  <set >
+      <if test="satisZZ != null" >
+        satis_zz = #{satisZZ},
+      </if>
+      <if test="satisNR != null" >
+        satis_nr = #{satisNR},
+      </if>
+      <if test="satisJD != null" >
+        satis_jd = #{satisJD},
+      </if>
+      <if test="suggestion != null" >
+        suggestion = #{suggestion},
+      </if>
+      <if test="status != null" >
+        status = #{status},
+      </if>
+      <if test="boardingId != null" >
+        boarding_id = #{boardingId},
+      </if>
+      <if test="auditStatus != null" >
+        audit_status = #{auditStatus},
+      </if>
+    </set>
+  	where activity_id = #{activityId} and  student_id=#{studentId}
+  </update>
+  
+  <select id="selectStudentByWxCode" parameterType="String" resultType="Integer">
+  select id from wx_student where wx_code=#{wxCode}
+  </select>
+
+
+  <select id="selectByStudentAndActivity" parameterType="ustc.yzwx.presentation.partakeRecord.form.PartakeRecord" resultMap="PartakeRecordtMap">
+    select 
+    <include refid="Base_Column_List"/> from wx_partake_record 
+    where student_id=#{student.id}  and activity_id=#{activity.id}
+  </select>
+  
+  <select id="updateByStudentAndActivity" parameterType="ustc.yzwx.presentation.partakeRecord.form.PartakeRecord" >
+    update wx_partake_record
+    <set >
+      <if test="satisZZ != null" >
+        satis_zz = #{satisZZ,jdbcType=FLOAT},
+      </if>
+      <if test="satisNR != null" >
+        satis_nr = #{satisNR,jdbcType=FLOAT},
+      </if>
+      <if test="satisJD != null" >
+        satis_jd = #{satisJD,jdbcType=FLOAT},
+      </if>
+      <if test="suggestion != null" >
+        suggestion=#{suggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status=#{status,jdbcType=SMALLINT},
+      </if>
+     </set>
+     where student_id=#{student.id}  and activity_id=#{activity.id}
+  </select>
+  
+  <select id="getStudentListByActId" resultType="java.util.HashMap">
+  select s.id studentId,s.name studentName,sc.name schoolName,s.student_major studentMajor,p.audit_status auditStatus
+  	from wx_partake_record p 
+  	left join wx_student s on p.student_id=s.id
+  	left join wx_school sc on s.school_id=sc.id
+  	where p.activity_id=#{activityId}
+  	LIMIT #{offset},#{limit}
+  </select>
+  
+  <!-- 查询某活动所有报名的学生数目-->
+  <select id="totalCount"  resultType="Integer">
+   select count(*) from wx_partake_record where activity_id=#{activityId}
+  </select>
+</mapper>
