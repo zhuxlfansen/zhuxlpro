@@ -20,23 +20,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 	<script type="text/javascript">
-	//window.location.href="/static/demo/index.html";
+	window.location.href="/static/demo/index.html";
 	</script>
   </head>
   
   <body>
-  <a href="skype:echo123?chats">Call</a> the Skype Echo / Sound Test Service
-    <div id="call_32" style="width:20%;background-color:#0094ff">
-   <script type="text/javascript">
-        Skype.ui({
-            name: "call",
-            element: "call_32",
-            participants: ["echo123"],
-            imageSize: 32,
-            imageColor: "white"
-        });
-    </script>
-</div>
-    </div>
+  
   </body>
 </html>
