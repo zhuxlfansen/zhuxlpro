@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 	<script type="text/javascript">
-	window.location.href="/static/demo/index.html";
+	window.location.href="<%=path%>/static/demo/index.html";
 	</script>
   </head>
   
