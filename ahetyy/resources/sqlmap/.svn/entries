@@ -1,0 +1,43 @@
+9
+
+dir
+741
+http://nccun.oicp.net:8082/svn/yzwx/resources/sqlmap
+http://nccun.oicp.net:8082/svn/yzwx
+
+
+
+2014-05-14T23:46:50.909408Z
+735
+yujie
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dd34117f-6113-2941-b383-7d8603026376
+
+activity
+dir
+
+admin
+dir
+
+partakeRecord
+dir
+
+query
+dir
+
+student
+dir
+
