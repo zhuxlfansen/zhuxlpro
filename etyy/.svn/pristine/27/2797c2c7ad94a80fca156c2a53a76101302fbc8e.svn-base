@@ -1,0 +1,13 @@
+package ustc.etyy.business.work;
+
+import java.util.List;
+import java.util.Map;
+
+public interface SchedulingService {
+
+	public List<Map<String,Object>> queryParentKS();
+	
+	public List<Map<String,Object>> queryChildKSByPID(int pId);
+	
+	public List<Map<String,Object>> queryExpertByKSID(int ksId);
+}

@@ -1,0 +1,33 @@
+package ustc.etyy.business.work.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ustc.etyy.business.work.SchedulingService;
+import ustc.etyy.integration.work.dao.SchedulingDao;
+
+@Service
+public class SchedulingServiceImpl implements SchedulingService {
+
+	@Autowired
+	private SchedulingDao schedulingDao;
+
+	@Override
+	public List<Map<String, Object>> queryParentKS() {
+		return schedulingDao.queryParentKS();
+	}
+
+	@Override
+	public List<Map<String, Object>> queryChildKSByPID(int pId) {
+		return schedulingDao.queryChildKSByPID(pId);
+	}
+
+	@Override
+	public List<Map<String, Object>> queryExpertByKSID(int ksId) {
+		return schedulingDao.queryExpertByKSID(ksId);
+	}
+	
+}

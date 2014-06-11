@@ -1,0 +1,71 @@
+9
+
+dir
+68
+http://nccun.oicp.net:8082/svn/wechatScore/wechatScore/WebRoot
+http://nccun.oicp.net:8082/svn/wechatScore
+
+
+
+2014-04-29T02:16:49.993086Z
+68
+chenyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+e9b927b3-f2e8-d546-9a9e-dd9fcbc5c350
+
+META-INF
+dir
+
+WEB-INF
+dir
+
+index.jsp
+file
+
+
+
+
+2014-04-28T01:57:34.719000Z
+eeaff70c88d02f76d125e1ef2a7e7c9f
+2014-04-24T05:52:54.911651Z
+3
+chenyang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+834
+
+static
+dir
+

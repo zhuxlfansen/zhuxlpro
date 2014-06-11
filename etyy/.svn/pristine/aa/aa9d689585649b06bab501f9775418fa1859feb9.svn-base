@@ -1,0 +1,15 @@
+package ustc.etyy.business.work.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ustc.etyy.business.work.SchedulingService;
+import ustc.etyy.integration.work.dao.SchedulingDao;
+
+@Service
+public class SchedulingServiceImpl implements SchedulingService {
+
+	@Autowired
+	private SchedulingDao schedulingDao;
+	
+}

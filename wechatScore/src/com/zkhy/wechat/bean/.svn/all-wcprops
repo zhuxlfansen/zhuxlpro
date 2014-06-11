@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean
+END
+MusicOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/MusicOutMessage.java
+END
+Articles.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/Articles.java
+END
+WeixinOauth2Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/WeixinOauth2Token.java
+END
+NewsOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/NewsOutMessage.java
+END
+WeixinUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/WeixinUserInfo.java
+END
+Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/Token.java
+END
+OutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/OutMessage.java
+END
+TextOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/TextOutMessage.java
+END
+InMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/InMessage.java
+END
+SNSUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/bean/SNSUserInfo.java
+END

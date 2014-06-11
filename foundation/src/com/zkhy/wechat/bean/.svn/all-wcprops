@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean
+END
+MusicOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/MusicOutMessage.java
+END
+Articles.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/Articles.java
+END
+NewsOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/NewsOutMessage.java
+END
+WeixinOauth2Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/WeixinOauth2Token.java
+END
+WeixinUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/WeixinUserInfo.java
+END
+OutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/OutMessage.java
+END
+Token.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/Token.java
+END
+TextOutMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/TextOutMessage.java
+END
+InMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/InMessage.java
+END
+SNSUserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/foundation/!svn/ver/11/src/com/zkhy/wechat/bean/SNSUserInfo.java
+END

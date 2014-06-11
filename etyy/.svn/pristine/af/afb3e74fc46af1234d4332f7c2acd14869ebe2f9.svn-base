@@ -1,0 +1,8 @@
+package ustc.etyy.integration.work.dao;
+
+import ustc.etyy.common.integration.dao.annotation.DaoMaster;
+
+@DaoMaster
+public interface SchedulingDao {
+
+}

@@ -1,0 +1,86 @@
+
+
+
+
+
+
+li, dd {
+    list-style: none;
+}
+
+.LoopPage ul li, .LoopPage ul li a {
+    float: left;
+}
+
+.LoopPage ul li a {
+    display: block;
+}
+
+ .LoopPage {
+    zoom: 1;
+}
+
+ .LoopPage:after{
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.LoopPage {
+    border-top: solid 3px #69c;
+    padding: 1.3em 0;
+    margin: 1em auto;
+}
+
+.LoopPage p {
+	 float: right;
+}
+
+.LoopPage p strong {
+    padding: 0 .3em;
+}
+
+.LoopPage p input {
+    border: solid 1px #ddd;
+    text-align: center;
+    width: 29px;
+    margin: 0 .4em;
+}
+
+.LoopPage p input.Btn {
+    width: auto;
+    background: #aaa;
+    color: white;
+    border: none;
+    font: bold 13px/normal '\5fae\8f6f\96c5\9ed1', '\5b8b\4f53', Arial;
+    text-transform: uppercase;
+    border-radius: .3em;
+    cursor: pointer;
+}
+
+.LoopPage p input.Btn:hover {
+    background: #8aa9cb;
+    color: white;
+    cursor: pointer;
+}
+
+.LoopPage ul {
+}
+
+.LoopPage ul li {
+    padding: 0 .3em 0 0;
+}
+
+.LoopPage ul li a {
+    border: solid 1px #ddd;
+    padding: .2em .5em;
+    color: black;
+    border-radius: .3em;
+}
+
+.LoopPage ul li a:hover, .LoopPage ul li a.ExtLoopLink {
+    border: solid 1px #69C;
+    color: #47c;
+}

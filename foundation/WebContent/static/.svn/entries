@@ -1,0 +1,46 @@
+9
+
+dir
+21
+http://nccun.oicp.net:8082/svn/foundation/WebContent/static
+http://nccun.oicp.net:8082/svn/foundation
+
+
+
+2014-04-07T10:19:39.901928Z
+20
+chenyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2c32aa5a-cfd5-d94f-be42-97554b2596ff
+
+articles
+dir
+
+css
+dir
+
+fonts
+dir
+
+images
+dir
+
+js
+dir
+
+upload
+dir
+

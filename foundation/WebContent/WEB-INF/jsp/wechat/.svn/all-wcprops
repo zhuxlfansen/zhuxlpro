@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/foundation/!svn/ver/20/WebContent/WEB-INF/jsp/wechat
+END
+bind.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/foundation/!svn/ver/28/WebContent/WEB-INF/jsp/wechat/bind.jsp
+END
+photoAlbum.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/foundation/!svn/ver/45/WebContent/WEB-INF/jsp/wechat/photoAlbum.jsp
+END
+photoList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/foundation/!svn/ver/45/WebContent/WEB-INF/jsp/wechat/photoList.jsp
+END
+processLine.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/foundation/!svn/ver/45/WebContent/WEB-INF/jsp/wechat/processLine.jsp
+END
+photoDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/foundation/!svn/ver/45/WebContent/WEB-INF/jsp/wechat/photoDetail.jsp
+END
+noticeList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/foundation/!svn/ver/45/WebContent/WEB-INF/jsp/wechat/noticeList.jsp
+END

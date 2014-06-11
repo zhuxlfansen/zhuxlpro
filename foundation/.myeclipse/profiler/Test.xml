@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="profiler.settings.n.profiled.threads.limit">32</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="profiler.settings.obj.alloc.stack.sampling.depth">-1</entry>
+<entry key="profiler.settings.instrument.method.invoke">true</entry>
+<entry key="profiler.settings.instr.scheme">1</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">com.zkhy.fw.business.**
+com.zkhy.fw.core.i18n.**
+com.zkhy.fw.core.security.**
+com.zkhy.fw.core.token.**
+com.zkhy.fw.core.util.**
+com.zkhy.fw.integration.dao.annotation.**
+com.zkhy.fw.integration.entity.**
+com.zkhy.fw.presentation.action.**
+com.zkhy.fw.presentation.filter.**
+com.zkhy.fw.presentation.form.**
+com.zkhy.fw.presentation.ioc.**
+com.zkhy.fw.presentation.response.body.**
+com.zkhy.fw.presentation.response.support.**
+com.zkhy.fw.presentation.validator.**
+com.zkhy.web.business.common.impl.**
+com.zkhy.web.business.index.**
+com.zkhy.web.business.wechat.**
+com.zkhy.web.core.constants.**
+com.zkhy.web.core.util.**
+com.zkhy.web.integration.common.dao.**
+com.zkhy.web.integration.common.entity.**
+com.zkhy.web.integration.index.dao.**
+com.zkhy.web.integration.index.entity.**
+com.zkhy.web.integration.wechat.**
+com.zkhy.web.presentation.common.action.**
+com.zkhy.web.presentation.common.form.**
+com.zkhy.web.presentation.common.validator.**
+com.zkhy.web.presentation.index.action.**
+com.zkhy.web.presentation.index.form.**
+com.zkhy.web.presentation.wechat.**
+com.zkhy.wechat.bean.**
+com.zkhy.wechat.filter.**
+com.zkhy.wechat.util.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">com.zkhy.fw.business.*,&#13;
+com.zkhy.fw.core.i18n.*,&#13;
+com.zkhy.fw.core.security.*,&#13;
+com.zkhy.fw.core.token.*,&#13;
+com.zkhy.fw.core.util.*,&#13;
+com.zkhy.fw.integration.dao.annotation.*,&#13;
+com.zkhy.fw.integration.entity.*,&#13;
+com.zkhy.fw.presentation.action.*,&#13;
+com.zkhy.fw.presentation.filter.*,&#13;
+com.zkhy.fw.presentation.form.*,&#13;
+com.zkhy.fw.presentation.ioc.*,&#13;
+com.zkhy.fw.presentation.response.body.*,&#13;
+com.zkhy.fw.presentation.response.support.*,&#13;
+com.zkhy.fw.presentation.validator.*,&#13;
+com.zkhy.web.business.common.impl.*,&#13;
+com.zkhy.web.business.index.*,&#13;
+com.zkhy.web.business.wechat.*,&#13;
+com.zkhy.web.core.constants.*,&#13;
+com.zkhy.web.core.util.*,&#13;
+com.zkhy.web.integration.common.dao.*,&#13;
+com.zkhy.web.integration.common.entity.*,&#13;
+com.zkhy.web.integration.index.dao.*,&#13;
+com.zkhy.web.integration.index.entity.*,&#13;
+com.zkhy.web.integration.wechat.*,&#13;
+com.zkhy.web.presentation.common.action.*,&#13;
+com.zkhy.web.presentation.common.form.*,&#13;
+com.zkhy.web.presentation.common.validator.*,&#13;
+com.zkhy.web.presentation.index.action.*,&#13;
+com.zkhy.web.presentation.index.form.*,&#13;
+com.zkhy.web.presentation.wechat.*,&#13;
+com.zkhy.wechat.bean.*,&#13;
+com.zkhy.wechat.filter.*,&#13;
+com.zkhy.wechat.util.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+<entry key="profiler.settings.sampling.interval">10</entry>
+<entry key="profiler.settings.cpu.profiling.type">0</entry>
+</properties>

@@ -1,0 +1,17 @@
+package ustc.etyy.integration.work.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import ustc.etyy.common.integration.dao.annotation.DaoMaster;
+
+@DaoMaster
+public interface SchedulingDao {
+	
+	public List<Map<String,Object>> queryParentKS();
+	
+	public List<Map<String,Object>> queryChildKSByPID(int pId);
+	
+	public List<Map<String,Object>> queryExpertByKSID(int ksId);
+
+}

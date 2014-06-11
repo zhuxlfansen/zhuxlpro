@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ustc.etyy.integration.work.dao.SchedulingDao" >
+
+	<select id="queryParentKS" resultType="java.util.HashMap">
+	SELECT s61.n_c1 pId, s61.s_c2 pName FROM tn_sys_007 s7  left join tn_sys_006 s61 on s7.n_c1=s61.n_c1 where s7.n_c3=0 group by s7.n_c1
+	</select>
+	
+	<select id="queryChildKSByPID" resultType="java.util.HashMap" parameterType="Integer">
+	SELECT s62.n_c1 cId, s62.s_c2 cName FROM tn_sys_007 s7  left join tn_sys_006  s62 on s7.n_c2  = s62.n_c1  where s7.n_c3=0 and s7.n_c1=#{pId}
+	</select>
+	
+	<select id="queryExpertByKSID" resultType="java.util.HashMap" parameterType="Integer">
+	select s1.n_c1 eId,s1.s_c2 eName,s62.s_c2  ksName   FROM tn_sys_007 s7  left join tn_sys_001 s1  on s7.n_c2  = s1.n_c1 left join tn_sys_006  s62 on s7.n_c2  = s62.n_c1  where s7.n_c3=1 and s7.n_c1=#{ksId}
+	</select>
+
+</mapper>

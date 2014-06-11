@@ -1,0 +1,44 @@
+9
+
+dir
+21
+http://nccun.oicp.net:8082/svn/foundation/src/com/zkhy/wechat
+http://nccun.oicp.net:8082/svn/foundation
+
+
+
+2014-04-07T07:58:01.424843Z
+16
+chenyang
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2c32aa5a-cfd5-d94f-be42-97554b2596ff
+
+
+
+
+
+
+0
+
+bean
+dir
+
+filter
+dir
+
+util
+dir
+

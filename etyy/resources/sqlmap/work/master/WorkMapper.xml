@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ustc.etyy.integration.work.dao.SchedulingDao" >
+	<resultMap id="BaseResultMap" type="ustc.etyy.presentation.work.form.OrderForm" >
+	    <id column="N_C1" property="id" jdbcType="INTEGER" />
+	    <result column="S_C2" property="pName" jdbcType="VARCHAR" />
+	    <result column="N_C3" property="pGender" jdbcType="INTEGER" />
+	    <result column="N_C4" property="pAge" jdbcType="INTEGER" />
+	    <result column="S_C5" property="pIDCardNum" jdbcType="VARCHAR" />
+	    <result column="S_C6" property="remark" jdbcType="VARCHAR" />
+	    <result column="D_C7" property="orderDate" jdbcType="DATE" />
+	    <result column="N_C8" property="apm" jdbcType="INTEGER" />
+	    <result column="N_C9" property="mzId" jdbcType="INTEGER" />
+	    <result column="N_C10" property="eId" jdbcType="INTEGER" />
+	    <result column="S_C11" property="oName" jdbcType="VARCHAR" />
+	    <result column="S_C12" property="address" jdbcType="VARCHAR" />
+	    <result column="S_C13" property="tel" jdbcType="VARCHAR" />
+	    <result column="S_C14" property="phone" jdbcType="VARCHAR" />
+	    <result column="S_C15" property="orderCode" jdbcType="VARCHAR" />
+	    <result column="N_C16" property="timeSel" jdbcType="INTEGER" />
+  	</resultMap>
+
+	<!-- 查询父类科室 -->
+	<select id="queryParentKS" resultType="java.util.HashMap">
+	SELECT s61.n_c1 pId, s61.s_c2 pName FROM tn_sys_007 s7  left join tn_sys_006 s61 on s7.n_c1=s61.n_c1 where s7.n_c3=0 group by s7.n_c1
+	</select>
+	
+	<!-- 根据父类ID查询子类科室 -->
+	<select id="queryChildKSByPID" resultType="java.util.HashMap" parameterType="Integer">
+	SELECT s62.n_c1 cId, s62.s_c2 cName FROM tn_sys_007 s7  left join tn_sys_006  s62 on s7.n_c2  = s62.n_c1  where s7.n_c3=0 and s7.n_c1=#{pId}
+	</select>
+	
+	<!-- 根据科室ID查询专家列表 -->
+	<select id="queryExpert" resultType="java.util.HashMap" parameterType="Integer">
+	select s1.n_c1 eId,s1.s_c2 eName,s62.s_c2  ksName  FROM tn_sys_007 s7  
+	left join tn_sys_001 s1  on s7.n_c2  = s1.n_c1 
+	left join tn_sys_006 s62 on s7.n_c1  = s62.n_c1
+	where s7.n_c3=1
+	<if test="_parameter != null">
+		and s7.n_c1=#{ksId}
+	</if>
+	</select>
+	
+	<!-- 查询父类门诊 -->
+	<select id="queryParentMZ" resultType="java.util.HashMap">
+	SELECT N_C1 mzId,S_C2 mzName FROM tn_oa_003 where ISNULL(n_c3)
+	</select>
+	
+	<!-- 根据父类门诊ID查询子类门诊 -->
+	<select id="queryChildMZByPID" resultType="java.util.HashMap" parameterType="Integer">
+	SELECT N_C1 mzId,S_C2 mzName FROM tn_oa_003 where N_C3=#{pId}
+	</select>
+	
+	<!-- 新增排班记录 -->
+	<insert id="createScheduling" parameterType="java.util.HashMap">
+	insert into tn_oa_001 (n_c2,n_c3,n_c4,n_c5) values (#{eId},#{apm},#{week},#{mzId})
+	</insert>
+	
+	<!-- 删除排班记录 -->
+	<delete id="delScheduling" parameterType="java.util.HashMap">
+	delete from tn_oa_001 where n_c2=#{eId} and n_c3=#{apm} and n_c4=#{week}
+	</delete>
+	
+	<!-- 根据ID查询门诊信息 -->
+	<select id="queryMZById" resultType="java.util.HashMap" parameterType="Integer">
+	select a31.S_C2 mzName,a32.S_C2 pmzName,a31.N_C1 mzId from TN_OA_003 a31 left JOIN tn_oa_003 a32 on a31.N_C3=a32.N_C1 where a31.N_C1=#{mzId}
+	</select>
+	
+	<!-- 根据参数查询排班信息 -->
+	<select id="querySchedulingByParm" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+	select a31.S_C2 mzName,a32.S_C2 pmzName 
+	from tn_oa_001 a1 
+	LEFT JOIN tn_oa_003 a31 on a1.N_C5=a31.N_C1 
+	LEFT JOIN tn_oa_003 a32 on a31.N_C3=a32.N_C1 
+	where a1.N_C2=#{eId} and a1.n_c4=#{week} and a1.n_c3=#{apm}
+	</select>
+	
+	<!-- 查询排班表 -->
+	<select id="querySchedulingTable" resultType="java.util.HashMap">
+	SELECT a1.N_C5 mzId,a1.N_C2 eId,s1.S_C2 eName,a1.N_C3 apm,a1.N_C4 week,a3.S_C2 mzName
+	FROM tn_oa_001 a1 
+	LEFT JOIN tn_sys_001 s1 on a1.N_C2=s1.N_C1
+	LEFT JOIN tn_oa_003 a3 on a1.N_C5=a3.N_C1
+	</select>
+	
+	<!-- 查询所有门诊 -->
+	<select id="queryAllMz" resultType="java.util.HashMap">
+	SELECT a31.N_C1 mzId,a31.S_C2 mzName,a31.n_c3 pId,a32.s_c2 pName FROM tn_oa_003 a31 left join tn_oa_003 a32 on a31.n_c3=a32.n_c1 order by a31.n_c3
+	</select>
+	
+	
+	<!-- 根据时间星期门诊ID选择专家列表 -->
+	<select id="queryExpertByParam" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+	select s1.n_c1 eId,s1.s_c2 eName
+	from tn_oa_001 a1 
+	LEFT JOIN tn_sys_001 s1 on s1.N_C1=a1.N_C2 
+	where a1.N_C5=#{mzId} and a1.n_c4=#{week} and a1.n_c3=#{apm}
+	</select>
+	
+	<!-- 新增预约 -->
+	<insert id="insertOrder" parameterType="ustc.etyy.presentation.work.form.OrderForm">
+	insert into TN_OA_002 (S_C2,N_C3,N_C4,S_C5,S_C6,D_C7,N_C8,N_C9,N_C10,S_C11,S_C12,S_C13,S_C14,S_C15,N_C16)
+		values (#{pName},#{pGender},#{pAge},#{pIDCardNum},#{remark},#{orderDate},#{apm},#{mzId},
+		#{eId},#{oName},#{address},#{tel},#{phone},#{orderCode},#{timeSel})
+	</insert>
+	
+	<!-- 查询预约列表 -->
+	<select id="queryOrderList" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+	SELECT a2.N_C1 id,a2.S_C2 pName,a2.n_c3 pGender,a2.n_c4 pAge,
+	a2.S_C5 cardNum,a2.s_c6 remark,a2.D_C7 orderDate,a2.n_c8 apm,
+	a3.S_C2 mzName,s1.S_C2 eName,a2.S_C11 oName,a2.S_C12 address,
+	a2.S_C13 tel,a2.S_C14 phone,a2.S_C15 orderCode,a2.N_C16 timeSel
+	FROM tn_oa_002 a2 
+	LEFT JOIN tn_oa_003 a3 ON a2.N_C9=a3.N_C1
+	LEFT JOIN tn_sys_001 s1 on a2.N_C10=s1.N_C1
+	<if test="param != null">
+	WHERE a2.S_C2 like CONCAT(CONCAT('%', #{param},'%')) or a2.S_C5 like CONCAT(CONCAT('%', #{param},'%')) 
+	or  a2.S_C13 like CONCAT(CONCAT('%', #{param},'%')) or  a2.S_C14 like CONCAT(CONCAT('%', #{param},'%')) 
+	or  a2.S_C15 like CONCAT(CONCAT('%', #{param},'%'))
+	</if>
+	order by a2.D_C7
+	limit #{start},#{size}
+	</select>
+	
+	<select id="countOrderList" resultType="Integer" parameterType="java.util.HashMap">
+	SELECT count(*)
+	FROM tn_oa_002 a2 
+	<if test="param != null">
+	WHERE a2.S_C2 like CONCAT(CONCAT('%', #{param},'%')) or a2.S_C5 like CONCAT(CONCAT('%', #{param},'%')) 
+	or  a2.S_C13 like CONCAT(CONCAT('%', #{param},'%')) or  a2.S_C14 like CONCAT(CONCAT('%', #{param},'%')) 
+	or  a2.S_C15 like CONCAT(CONCAT('%', #{param},'%'))
+	</if>
+	</select>
+</mapper>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n
+END
+I18nMessageAccessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n/I18nMessageAccessor.java
+END
+I18nUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n/I18nUtil.java
+END
+I18nCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n/I18nCode.java
+END
+I18nMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n/I18nMessage.java
+END
+LoginUserLocaleResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n/LoginUserLocaleResolver.java
+END
+I18nContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/i18n/I18nContext.java
+END

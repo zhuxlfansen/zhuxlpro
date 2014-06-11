@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkhy.integration.wechat.dao.WechatDao">
+  
+  
+  <select id="checkExistByWechatCode" parameterType="String" resultType="Integer">
+  select count(0) from t_student where wechat_code=#{wechatCode}
+  </select>
+  
+  <select id="getUserInfoByUserId" parameterType="Integer" resultType="java.util.HashMap">
+  select stu_name stuName,password,wechat_code wechatCode from t_student where stu_id=#{studentId}
+  </select>
+  
+  <update id="doBind" parameterType="java.util.HashMap">
+  update t_student set wechat_code=#{wechatCode} where stu_id=#{studentId}
+  </update>
+  
+  <select id="getExamList" resultType="java.util.HashMap">
+  select exam_id examId,exam_name examName,exam_date examDate from t_exam limit 0,3 
+  </select>
+  
+  <select id="getExamFullList" resultType="java.util.HashMap">
+  select exam_id examId,exam_name examName,exam_date examDate from t_exam 
+  </select>
+  
+  <select id="getExamDetail" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+  select sc.score_id scoreId,ex.exam_name examName,su.subject_name subjectName,st.stu_name stuName,sc.score score
+  from t_score sc left join t_student st on sc.stu_id=st.stu_id
+  left join t_exam ex on sc.exam_id=ex.exam_id
+  left join m_subject su on sc.subject_id =su.subject_id
+  where st.wechat_code=#{wechatCode} and sc.exam_id=#{examId}
+  </select>
+  
+  <select id="getScoreDetail" parameterType="Integer" resultType="java.util.HashMap">
+  select su.subject_name subjectName,qt.question_type_name qtName,sd.score score,sc.score subjectScore,sc.exam_id examId
+  from t_score_detail sd left join t_score sc on sd.score_id=sc.score_id
+  left join m_subject su on sc.subject_id =su.subject_id
+  left join m_question_type qt on sd.question_type_id=qt.question_type_id
+  where sd.score_id=#{scoreId}
+  </select>
+</mapper>

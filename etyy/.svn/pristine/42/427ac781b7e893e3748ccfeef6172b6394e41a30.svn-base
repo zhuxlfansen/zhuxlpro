@@ -1,0 +1,5 @@
+package ustc.etyy.business.work;
+
+public interface SchedulingService {
+
+}

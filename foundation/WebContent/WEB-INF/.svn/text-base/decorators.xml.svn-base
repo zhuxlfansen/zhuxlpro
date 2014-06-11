@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/jsp/fragment/">
+	<excludes>
+		<pattern>/static/*</pattern>
+		<pattern>/error/*</pattern>
+		<pattern>/login*</pattern>
+		<pattern>/logout*</pattern>
+	</excludes>
+
+	<decorator name="default" page="template_default.jsp" />
+	<decorator name="popup" page="template_popup.jsp" />
+	<decorator name="simple" page="template_simple.jsp" />
+	<decorator name="echonetPC" page="echonet/template_pc.jsp" />
+	<decorator name="echonetMB" page="echonet/template_mb.jsp" />
+</decorators>

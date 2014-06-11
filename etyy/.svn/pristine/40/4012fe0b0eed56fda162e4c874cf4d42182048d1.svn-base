@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ustc.yzwx.integration.partakeRecord.dao.SignUpDao">
+	<resultMap id="BaseResultMap" type="ustc.yzwx.presentation.partakeRecord.form.SignUpForm" >
+	    <result column="login_name" property="loginName" jdbcType="VARCHAR" />
+	    <result column="login_pwd" property="loginPwd" jdbcType="VARCHAR" />
+	    <result column="realname" property="realname" jdbcType="VARCHAR" />
+	    <result column="grade" property="grade" jdbcType="VARCHAR" />
+	    <result column="sex" property="gender" jdbcType="VARCHAR" />
+	    <result column="deptype" property="xlyType" jdbcType="INTEGER" />
+	    <result column="collegeid" property="collegeId" jdbcType="INTEGER" />
+	    <result column="finish_college" property="finishCollege" jdbcType="VARCHAR" />
+	    <result column="major_name" property="majorName" jdbcType="VARCHAR" />
+	    <result column="link_tel" property="linkTel" jdbcType="VARCHAR" />
+	    <result column="link_email" property="linkEmail" jdbcType="VARCHAR" />
+	    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+	    <result column="en_4" property="en4" jdbcType="VARCHAR" />
+	    <result column="en_6" property="en6" jdbcType="VARCHAR" />
+	    <result column="wear_size" property="wearSize" jdbcType="VARCHAR" />
+	    <result column="gpa" property="gpa" jdbcType="VARCHAR" />
+	    <result column="grad_topnum" property="gradTopNum" jdbcType="VARCHAR" />
+	    <result column="interest_major" property="interestMajor" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List" >
+    login_name,login_pwd, realname,grade,sex, deptype,collegeid,finish_college,major_name,link_tel,link_email,id_card,en_4,en_6,wear_size,gpa,grad_topnum,interest_major
+  	</sql>
+  	
+  	<select id="selectByIDCard" resultMap="BaseResultMap" parameterType="String">
+    select 
+    <include refid="Base_Column_List" />
+    from xz_user
+    where id_card = #{idCard}
+  </select>
+	  
+	<select id="checkExistByIDCard" resultType="Integer" parameterType="String">
+	select count(*) from xz_user where id_card=#{idCard}
+	</select>
+	
+	<select id="getCollegeIdByName" resultType="Integer" parameterType="String">
+	select id from college where college_name=#{finishCollege}
+	</select>
+	
+	<insert id="insertSignUpFormSelective" parameterType="ustc.yzwx.presentation.partakeRecord.form.SignUpForm" >
+    insert into xz_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="loginName != null" >
+        login_name,
+      </if>
+      <if test="loginPwd != null" >
+        login_pwd,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="gender != null" >
+        sex,
+      </if>
+      <if test="xlyType != null" >
+        deptype,
+      </if>
+       <if test="collegeId != null" >
+        collegeid,
+      </if>
+       <if test="finishCollege != null" >
+        finish_college,
+      </if>
+       <if test="majorName != null" >
+        major_name,
+      </if>
+       <if test="linkTel != null" >
+        link_tel,
+      </if>
+       <if test="linkEmail != null" >
+        link_email,
+      </if>
+       <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="en4 != null" >
+        en_4,
+      </if>
+      <if test="en6 != null" >
+        en_6,
+      </if>
+      <if test="wearSize != null" >
+        wear_size,
+      </if>
+      <if test="gpa != null" >
+        gpa,
+      </if>
+      <if test="gradTopNum != null" >
+        grad_topnum,
+      </if>
+      <if test="interestMajor != null" >
+        interest_major,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="loginName != null" >
+        #{loginName},
+      </if>
+      <if test="loginPwd != null" >
+        #{loginPwd},
+      </if>
+      <if test="grade != null" >
+        #{grade},
+      </if>
+      <if test="realname != null" >
+        #{realname},
+      </if>
+      <if test="gender != null" >
+        #{gender},
+      </if>
+      <if test="xlyType != null" >
+        #{xlyType},
+      </if>
+       <if test="collegeId != null" >
+        #{collegeId},
+      </if>
+       <if test="finishCollege != null" >
+        #{finishCollege},
+      </if>
+       <if test="majorName != null" >
+        #{majorName},
+      </if>
+       <if test="linkTel != null" >
+        #{linkTel},
+      </if>
+       <if test="linkEmail != null" >
+        #{linkEmail},
+      </if>
+       <if test="idCard != null" >
+        #{idCard},
+      </if>
+      <if test="en4 != null" >
+        #{en4},
+      </if>
+      <if test="en6 != null" >
+        #{en6},
+      </if>
+      <if test="wearSize != null" >
+        #{wearSize},
+      </if>
+      <if test="gpa != null" >
+        #{gpa},
+      </if>
+      <if test="gradTopNum != null" >
+        #{gradTopNum},
+      </if>
+      <if test="interestMajor != null" >
+        #{interestMajor},
+      </if>
+    </trim>
+  </insert>
+  
+  
+</mapper>

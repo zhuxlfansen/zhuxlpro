@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+    <classPathEntry location="D:/Projects/workspace/wechatScore/WebRoot/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" />
+  <context id="context1"  targetRuntime="MyBatis3">
+    <commentGenerator>  
+         <property name="suppressAllComments" value="false" />  
+    </commentGenerator>  
+  
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://nccun.oicp.net:3306/wechatScore" userId="root" password="root">
+    </jdbcConnection>
+    
+    <javaModelGenerator targetPackage="com.zkhy.presentation.manager.form" targetProject="wechatScore/src">
+         <property name="enableSubPackages" value="true" />
+         <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="sqlmap.manager.master" targetProject="wechatScore/resources">
+        <property name="enableSubPackages" value="true" />    
+    </sqlMapGenerator>
+    
+    <javaClientGenerator targetPackage="com.zkhy.integration.manager.dao" targetProject="wechatScore/src" type="XMLMAPPER" >
+        <property name="enableSubPackages" value="true" />        
+    </javaClientGenerator>
+    
+    <!-- 表 -->
+    <table schema="Manager" tableName="t_manager"  domainObjectName="Manager"
+        enableInsert="true"  
+        enableSelectByPrimaryKey= "true" 
+        enableSelectByExample   = "false" 
+        enableDeleteByExample   = "false"   
+        enableCountByExample    = "false" 
+        enableUpdateByExample   = "false"> 
+      <!--  
+      <columnOverride column="wx_code" property="wxCode" javaType="String"/>  
+      <columnOverride column="title" property="title" javaType="String"/>
+      <columnOverride column="subtitle" property="subtitle" javaType="String"/>
+      <columnOverride column="source" property="source" javaType="String"/>
+      <columnOverride column="summary" property="summary" javaType="String"/>
+      <columnOverride column="content" property="content" javaType="String"/>
+      <columnOverride column="img_url" property="img_url" javaType="String"/>
+      <columnOverride column="create_time" property="create_time" javaType="Date"/>
+      <columnOverride column="create_user" property="create_user" javaType="int"/>
+      <columnOverride column="status" property="status" javaType="int"/> -->
+      
+    </table>
+    
+  </context>
+</generatorConfiguration>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/foundation/!svn/ver/15/resources/properties
+END
+application_development.properties
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/foundation/!svn/ver/10/resources/properties/application_development.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/foundation/!svn/ver/6/resources/properties/log4j.properties
+END
+application_production.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/foundation/!svn/ver/6/resources/properties/application_production.properties
+END
+wechat.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/foundation/!svn/ver/22/resources/properties/wechat.properties
+END
+application_functional.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/foundation/!svn/ver/6/resources/properties/application_functional.properties
+END

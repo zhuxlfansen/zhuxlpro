@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 共通定義 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+
+    <!-- サービス自動スキャン -->
+    <context:component-scan base-package="com.zkhy.fw.business,com.zkhy.web.business"  use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+    </context:component-scan>
+
+    <!-- メッセージリソース定義 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <!-- メッセージが存在しない場合、コードをメッセージとして利用する -->
+        <property name="useCodeAsDefaultMessage" value="true" />
+        <!-- メッセージ定義ファイル位置 -->
+        <property name="basenames">
+            <list>
+                <value>i18n/label/LabelResources</value>
+                <value>i18n/message/MessageResources</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- メッセージAccessor -->
+    <bean class="com.zkhy.fw.core.i18n.I18nMessageAccessor" scope="singleton" />
+
+    <!-- リクエストLocale -->
+    <bean id="localeResolver" class="com.zkhy.fw.core.i18n.LoginUserLocaleResolver"/>
+
+    <!-- ログ -->
+    <bean id = "FWLogger" class="com.zkhy.fw.core.util.FWLogger" scope="singleton" />
+
+    <!-- ログ -->
+    <bean class="com.zkhy.fw.core.util.BatchLogger" scope="singleton" />
+
+</beans>

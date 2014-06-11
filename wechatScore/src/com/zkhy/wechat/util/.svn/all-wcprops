@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/wechatScore/!svn/ver/5/wechatScore/src/com/zkhy/wechat/util
+END
+WeChatSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/WeChatSession.java
+END
+HttpKit.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/wechatScore/!svn/ver/5/wechatScore/src/com/zkhy/wechat/util/HttpKit.java
+END
+EncryptUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/EncryptUtils.java
+END
+Tools.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/Tools.java
+END
+WeChatConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/WeChatConfig.java
+END
+WeChat.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/WeChat.java
+END
+AdvancedUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/AdvancedUtil.java
+END
+WeChatCommonUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/WeChatCommonUtil.java
+END
+XStreamFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/wechatScore/!svn/ver/3/wechatScore/src/com/zkhy/wechat/util/XStreamFactory.java
+END

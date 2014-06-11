@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkhy.web.integration.wechat.WechatDao">
+
+	<!-- 根据用户微信号查询是否进行过绑定 -->
+	<select id="getExistByWechatCode" parameterType="String" resultType="Integer">
+		SELECT count(0)
+		FROM M_USER
+		WHERE wechat_code = #{wechatCode}
+	</select>
+	
+	<!-- 根据账号查询用户信息 -->
+	<select id="getUserInfoByUserId" resultType="java.util.HashMap" parameterType="String">
+		select user_id userId,user_name userName,wechat_code wechatCode,password
+		from m_user
+		where user_id=#{userId}
+	</select>
+	
+	<!-- 根据微信号查询用户信息 -->
+	<select id="getUserInfoByWechatCode" resultType="java.util.HashMap" parameterType="String">
+		select user_id userId,user_name userName,wechat_code wechatCode,password
+		from m_user
+		where wechat_code=#{wechatCode}
+	</select>
+	
+	<update id="updateWechatCode" parameterType="java.util.HashMap">
+	update m_user set wechat_code=#{wechatCode} where user_id=#{userId}
+	</update>
+	
+	<!-- 插入微信墙信息 -->
+	<insert id="pushSQInfo"  parameterType="com.zkhy.web.presentation.wechat.form.DynamicForm">
+	insert into t_dynamic
+	<trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        dynamic_id,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="picPath != null" >
+        pic_path,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id},
+      </if>
+      <if test="content != null" >
+        #{content},
+      </if>
+      <if test="picPath != null" >
+        #{picPath},
+      </if>
+      <if test="creator != null" >
+        #{creator},
+      </if>
+      <if test="createTime != null" >
+        #{createTime},
+      </if>
+    </trim>
+	</insert>
+</mapper>
+

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/wechatScore/!svn/ver/68/wechatScore/WebRoot/WEB-INF/jsp
+END
+inputScore.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/wechatScore/!svn/ver/67/wechatScore/WebRoot/WEB-INF/jsp/inputScore.jsp
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/wechatScore/!svn/ver/68/wechatScore/WebRoot/WEB-INF/jsp/login.jsp
+END
+managerList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/wechatScore/!svn/ver/52/wechatScore/WebRoot/WEB-INF/jsp/managerList.jsp
+END
+footer.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/wechatScore/!svn/ver/12/wechatScore/WebRoot/WEB-INF/jsp/footer.jsp
+END
+addManager.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/wechatScore/!svn/ver/51/wechatScore/WebRoot/WEB-INF/jsp/addManager.jsp
+END
+header.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/wechatScore/!svn/ver/12/wechatScore/WebRoot/WEB-INF/jsp/header.jsp
+END
+creatStudent.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/wechatScore/!svn/ver/67/wechatScore/WebRoot/WEB-INF/jsp/creatStudent.jsp
+END
+updateManager.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/wechatScore/!svn/ver/55/wechatScore/WebRoot/WEB-INF/jsp/updateManager.jsp
+END
+navigation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/wechatScore/!svn/ver/68/wechatScore/WebRoot/WEB-INF/jsp/navigation.jsp
+END

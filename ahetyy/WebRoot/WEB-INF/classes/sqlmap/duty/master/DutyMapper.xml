@@ -2,5 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.etyy.integration.duty.dao.DutyDao" >
 
-
+	<select id="selectDocList" resultType="java.util.HashMap">
+	select ts2.N_C1 id,ts2.S_C2 name,ts2.N_C4 isExp,ts2.N_C5 isSep,ts1.S_C2 deptName
+	from TN_SYS_002 ts2 left join TN_SYS_001 ts1 on ts2.N_C3=ts1.N_C1
+	</select>
+	
+	<select id="selectAllDuty" resultType="java.util.HashMap" >
+	select N_C3 apm,S_C4 week,N_C2 expertId from TN_SYS_003
+	</select>
+	
+	<select id="selectByExpId" resultType="java.util.HashMap" parameterType="Integer">
+	select N_C3 apm,S_C4 week from TN_SYS_003 where N_C2=#{id}
+	</select>
+	
+	<select id="checkExist" parameterType="java.util.HashMap" resultType="Integer">
+	select count(*) from TN_SYS_003 where N_C2=#{id} and N_C3=#{apm} and S_C4=#{week}
+	</select>
+	
+	<insert id="insertDuty" parameterType="java.util.HashMap">
+	insert into TN_SYS_003 (N_C2,N_C3,S_C4) values (#{id},#{apm},#{week})
+	</insert>
+	
+	<delete id="deleteDuty" parameterType="java.util.HashMap">
+	delete from TN_SYS_003 where N_C2=#{id} and N_C3=#{apm} and S_C4=#{week}
+	</delete>
+	
+	<!-- 查询知名专家 -->
+	<select id="queryDutyList1" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		select ts2.S_C2 name,ts3.N_C3 apm,ts3.S_C4 week,ts1.N_C1 deptId,ts1.S_C2 deptName
+		from TN_SYS_003 ts3 
+		left join TN_SYS_002 ts2 on ts3.N_C2=ts2.N_C1  
+		left join TN_SYS_001 ts1 on ts2.N_C3=ts1.N_C1
+		where 1=1
+		<if test="isExp!=null">
+			and ts2.N_C4=1
+		</if>
+		<if test="nk!=null">
+			and ts1.N_C4=17
+		</if>
+		<if test="zk!=null">
+			and ts2.N_C4=1
+		</if>
+		<if test="wk!=null">
+			and ts1.N_C4=18
+		</if>
+		<if test="qt!=null">
+			and ts1.N_C4=19
+		</if>
+	</select>
+	
 </mapper>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/foundation/!svn/ver/19/src/com/zkhy/fw/core/security
+END
+FWAuthorizingRealm.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/foundation/!svn/ver/19/src/com/zkhy/fw/core/security/FWAuthorizingRealm.java
+END
+Authenticatable.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/security/Authenticatable.java
+END
+Authorizatable.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/foundation/!svn/ver/6/src/com/zkhy/fw/core/security/Authorizatable.java
+END

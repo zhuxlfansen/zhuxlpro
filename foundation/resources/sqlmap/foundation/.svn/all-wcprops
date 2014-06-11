@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/foundation/!svn/ver/21/resources/sqlmap/foundation
+END
+WechatDaoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/foundation/!svn/ver/44/resources/sqlmap/foundation/WechatDaoMapper.xml
+END
+TimeLineDetailDaoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/foundation/!svn/ver/21/resources/sqlmap/foundation/TimeLineDetailDaoMapper.xml
+END
+TimeLineDaoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/foundation/!svn/ver/21/resources/sqlmap/foundation/TimeLineDaoMapper.xml
+END
+AccountDaoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/foundation/!svn/ver/19/resources/sqlmap/foundation/AccountDaoMapper.xml
+END
